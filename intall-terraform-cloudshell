@@ -3,7 +3,8 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinu
 sudo yum -y install terraform
 
 
-------------------------------------------
+----------------------------------------------------------------------
+
 Install Helm:
 
 wget https://get.helm.sh/helm-v3.2.0-linux-amd64.tar.gz
@@ -12,3 +13,9 @@ ls -al
 echo 'export PATH=$HOME/linux-amd64:$PATH' > .bash_profile
 source .bash_profile
 helm version --short
+
+----------------------------------------------------------------------
+
+helm repo add jenkinsci https://charts.jenkins.io
+helm repo update
+helm search repo jenkinsci
